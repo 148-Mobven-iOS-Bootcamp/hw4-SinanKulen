@@ -80,6 +80,9 @@ class WebViewContainerViewController: UIViewController {
     }
     @IBAction func safariButtonTapped(_ sender: Any) {
         
+        if let url = URL(string: "https://www.google.com") {
+            UIApplication.shared.open(url)
+        }
     }
     
 }
