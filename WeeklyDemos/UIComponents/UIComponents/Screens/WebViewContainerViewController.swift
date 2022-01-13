@@ -24,8 +24,18 @@ class WebViewContainerViewController: UIViewController {
     var urlString = "https://www.google.com"
 
     func configureWebView() {
-        guard let url = URL(string: urlString) else { return }
-        let urlRequest = URLRequest(url: url)
+     //   guard let url = URL(string: urlString) else { return }
+     //   let urlRequest = URLRequest(url: url)
+        
+        let htmlCode = """
+                    <div class="container">
+                    <div class="terminal">
+                    <p class="prompt">Mobven iOS Bootcamp Homework</p>
+                    <p class="prompt output new-output"></p>
+                    </div>
+                    </div>
+                    """
+        webView.loadHTMLString(htmlCode, baseURL: nil)
 
         let preferences = WKPreferences()
         preferences.javaScriptCanOpenWindowsAutomatically = false
@@ -40,7 +50,7 @@ class WebViewContainerViewController: UIViewController {
                             forKeyPath: #keyPath(WKWebView.isLoading),
                             options: .new,
                             context: nil)
-        webView.load(urlRequest)
+   //     webView.load(urlRequest)
     }
 
     func configureActivityIndicator() {
