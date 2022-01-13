@@ -572,7 +572,6 @@
                     <navigationItem key="navigationItem" id="x9X-Is-1KR"/>
                     <connections>
                         <outlet property="activityIndicator" destination="hej-Yj-pi0" id="0OO-G2-3b8"/>
-                        <outlet property="backButtonTapped" destination="lrr-Hy-ewZ" id="EfA-hD-waY"/>
                         <outlet property="webView" destination="2tJ-8T-LVY" id="V70-lq-GYh"/>
                     </connections>
                 </viewController>
