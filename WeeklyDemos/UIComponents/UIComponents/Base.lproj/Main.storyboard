@@ -60,11 +60,10 @@
                                 <rect key="frame" x="16" y="226" width="382" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImage" translatesAutoresizingMaskIntoConstraints="NO" id="6ty-65-lOR">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="eGW-o7-D9Z"/>
-                                            <constraint firstAttribute="width" secondItem="6ty-65-lOR" secondAttribute="height" multiplier="16:9" constant="26.444444444444457" id="hiL-MS-T60"/>
                                             <constraint firstAttribute="width" constant="300" id="wFC-iV-MSL"/>
                                         </constraints>
                                     </imageView>
@@ -533,9 +532,24 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrr-Hy-ewZ">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="reload" image="arrow.clockwise" catalog="system" id="QY5-RS-4wc">
+                                    <barButtonItem title="reload" image="arrow.clockwise" catalog="system" width="95" id="QY5-RS-4wc">
                                         <connections>
                                             <action selector="reloadButtonTapped:" destination="8R7-g3-9b9" id="xfH-1m-Kq8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="back" image="backward" catalog="system" width="115" id="R82-PO-OCE">
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="8R7-g3-9b9" id="zuo-6b-zcK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="forward" image="forward" catalog="system" width="102" id="rT4-j1-pLA">
+                                        <connections>
+                                            <action selector="forwardButtonTapped:" destination="8R7-g3-9b9" id="Soi-aj-pZ2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="safari" image="safari" catalog="system" width="137" id="1ys-cA-BnT">
+                                        <connections>
+                                            <action selector="safariButtonTapped:" destination="8R7-g3-9b9" id="yGh-09-FdT"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -558,6 +572,7 @@
                     <navigationItem key="navigationItem" id="x9X-Is-1KR"/>
                     <connections>
                         <outlet property="activityIndicator" destination="hej-Yj-pi0" id="0OO-G2-3b8"/>
+                        <outlet property="backButtonTapped" destination="lrr-Hy-ewZ" id="EfA-hD-waY"/>
                         <outlet property="webView" destination="2tJ-8T-LVY" id="V70-lq-GYh"/>
                     </connections>
                 </viewController>
@@ -805,8 +820,11 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="backward" catalog="system" width="128" height="79"/>
         <image name="bgImage" width="640" height="360"/>
+        <image name="forward" catalog="system" width="128" height="79"/>
         <image name="location" catalog="system" width="128" height="118"/>
+        <image name="safari" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
