@@ -94,7 +94,6 @@ class WebViewContainerViewController: UIViewController {
             UIApplication.shared.open(url)
         }
     }
-    
 }
 
 extension WebViewContainerViewController: WKNavigationDelegate {

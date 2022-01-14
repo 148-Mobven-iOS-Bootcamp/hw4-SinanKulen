@@ -42,6 +42,7 @@ class MapViewController: UIViewController {
         case .denied, .restricted:
             //popup gosterecegiz. go to settings butonuna basildiginda
             //kullaniciyi uygulamamizin settings sayfasina gonder
+            alertFunc()
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -49,6 +50,8 @@ class MapViewController: UIViewController {
             fatalError()
         }
     }
+    
+
 
     @IBAction func showCurrentLocationTapped(_ sender: UIButton) {
         locationManager.requestLocation()
@@ -79,6 +82,20 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
-extension MapViewController: MKMapViewDelegate {
-
+extension UIViewController {
+    func alertFunc(){
+        let alertView = UIAlertController(title: "Error", message: "!!!", preferredStyle: .alert)
+        let alertButton = UIAlertAction(title: "Canscel", style: UIAlertAction.Style.cancel, handler: nil)
+        let settingsButton = UIAlertAction(title: "goToSettings", style: UIAlertAction.Style.default) { (action) in
+            if let url = NSURL(string: UIApplication.openSettingsURLString){
+                UIApplication.shared.canOpenURL(url as URL)
+                
+            }
+        }
+        alertView.addAction(alertButton)
+        alertView.addAction(settingsButton)
+        present(alertView, animated: true, completion: nil)
+    }
 }
+
+
