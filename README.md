@@ -1,4 +1,4 @@
-# HW4
+# HW4 - SinanKulen
 
 ## Ödev 1: 
 Bu hafta geliştirdiğimiz projedeki webView ekranında 
